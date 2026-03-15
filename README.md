@@ -174,5 +174,3 @@ MIT License - Free to use and modify
 ## Support
 
 For issues or questions, create an issue on GitHub.
-
-```
