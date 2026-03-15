@@ -1,5 +1,3 @@
-# Unified KML Converter
-
 Convert CSV/KML/KMZ files for FTTH network infrastructure into organized KML/KMZ output.
 
 ## Features
@@ -28,9 +26,9 @@ Convert CSV/KML/KMZ files for FTTH network infrastructure into organized KML/KMZ
 
 ## File Structure
 
-```
+```text
 kml-converter/
-├── index.html              # Main UI and orchestrator
+├── index.html             # Main UI and orchestrator
 ├── js/
 │   ├── hp-converter.js    # Homepass converter (27 fields)
 │   ├── fat-converter.js   # FAT converter (conditional styling)
@@ -38,6 +36,7 @@ kml-converter/
 │   ├── ch-converter.js    # Clamp/Hook converter
 │   └── path-generator.js  # HP→FAT path generator
 └── README.md
+
 ```
 
 ## Adding New Fields
@@ -47,32 +46,39 @@ kml-converter/
 **Edit `js/fat-converter.js`:**
 
 1. Update column mapping:
+
 ```javascript
 columns: {
   // ... existing columns
   height: 6  // NEW: Column G (index 6)
 }
+
 ```
 
 2. Update expected headers:
+
 ```javascript
 expectedHeaders: [
   // ... existing headers
   'Ketinggian Lokasi'  // NEW
 ]
+
 ```
 
 3. Update converter function:
+
 ```javascript
 const data = {
   // ... existing fields
   height: cols[config.columns.height]  // NEW
 };
+
 ```
 
 4. Update placemark generation:
+
 ```javascript
-<SimpleData name="Height">${data.height}</SimpleData>  <!-- NEW -->
+<SimpleData name="Height">${data.height}</SimpleData>  
 ```
 
 That's it! No need to touch `index.html`.
@@ -154,6 +160,13 @@ Requires ES6 module support.
 - JSZip for KMZ handling (loaded from CDN)
 - Works 100% offline after first load
 
+## 🔗 Related FTTH Automation Tools
+
+Besides this Unified KML Converter, I have also developed other web applications to streamline FTTH engineering workflows:
+
+* **Clamp/Hook to Homepass Matcher:** Automatically pairs and assigns specific Clamp/Hook coordinates to every Homepass point based on the design logic.
+* **KML/KMZ to CSV Converter:** Reverses the process! Extracts raw data and coordinates from KML/KMZ files back into a clean CSV format. It also includes an option to cleanly separate the CSV outputs based on the original KML folder structure.
+
 ## License
 
 MIT License - Free to use and modify
@@ -161,3 +174,5 @@ MIT License - Free to use and modify
 ## Support
 
 For issues or questions, create an issue on GitHub.
+
+```
