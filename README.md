@@ -1,8 +1,6 @@
-# Unified KML Converter
+# Unified KML Converter (LinkNet Small Alley)
 
-Convert CSV/KML/KMZ files for FTTH network infrastructure into organized KML/KMZ output.
-
-**Live Demo WebApp:** [smallalley-linknet.vercel.app](https://smallalley-linknet.vercel.app/)
+Convert raw FTTH CSV data into organized, properly styled KML/KMZ files that strictly follow the **LinkNet Small Alley** project standards.
 
 ## Features
 
@@ -173,10 +171,6 @@ Besides this Unified KML Converter, I have also developed other web applications
 
 * **Clamp/Hook to Homepass Matcher:** Automatically pairs and assigns specific Clamp/Hook coordinates to every Homepass point based on the design logic.
 * **KML/KMZ to CSV Converter:** Reverses the process! Extracts raw data and coordinates from KML/KMZ files back into a clean CSV format. It also includes an option to cleanly separate the CSV outputs based on the original KML folder structure.
-
-## License
-
-MIT License - Free to use and modify
 
 ## Support
 
